@@ -1,0 +1,21 @@
+#
+# Test dependency
+#
+
+# Show default items
+
+# Set up the math
+sixth category
+ Selection Alpha = 'sixth category'.'Selection Bravo' + 1 =
+ Selection Bravo = 'sixth category'.'Selection Charlie' + 1 =
+ Selection Charlie = 'sixth category'.'Selection Delta' + 1 =
+ Selection Delta = 10 =
+
+# Set up the views 
+sixth category 'Depends:1_panel'
+ Selection Alpha '_name_value'
+ Selection Bravo '_name_value'
+ Selection Charlie '_name_value'
+ Selection Delta '_name_value'
+ 
+sixth category 'Depends:2_text'

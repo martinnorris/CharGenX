@@ -1,0 +1,22 @@
+# Steps that increase / decrease / reset by buttons
+values 'values:1'
+ First = 0 =
+ Second = 0 =
+ 
+step 'values:2'
+ up_graphic
+ up_graphic = 'values'.'First' = 'values'.'First' + 1 =
+ up_graphic = 'values'.'Second' = 'values'.'Second' - 1 =
+ up_graphic
+  step -
+   down_graphic
+ down_graphic
+ down_graphic = 'values'.'Second' = 'values'.'Second' + 1 =
+ down_graphic = 'values'.'First' = 'values'.'First' - 1 =
+ down_graphic
+  step -
+   up_graphic
+ reset_graphic *
+  step -
+   up_graphic
+   down_graphic

@@ -1,0 +1,187 @@
+#
+# Test suggestion and exclusion
+#
+# Dictionary - <category> ['<region>'] - for a category creates a region with full path separated by ':' to display the category
+first category 'Suggestion and Exclusion'
+ Selection A
+ Selection B
+ Selection C
+ Selection D
+ Selection E
+ Selection F
+second category 'Suggestion and Exclusion'
+ Selection G suggests A and B and C
+# Dictionary - <category> [.] - creates a suggestion for the superior category selection choice to suggest a particular suggestion
+  first category .
+   Selection A
+   Selection B
+   Selection C
+ Selection H excludes all except A and C and E and F
+# Dictionary - <category> [>] - creates an exclusion for the superior category selection choice to exclude another suggestion
+  first category >
+   Selection A
+   Selection C   
+   Selection E
+   Selection F
+
+#
+# Test region ordering and region
+#
+# Dictionary - <category> ['<region>:<n>'] - each top level region tab pane further regions are enumerated since sorted alphanumerically for addition to the character view
+fourth category 'Order and Region:2'
+ Selection T
+ Selection V
+ Selection X
+third category 'Order and Region:1'
+ Selection M
+ Selection N
+ Selection P
+fourth category 'Order and Region:2'
+ Selection Y
+ Selection Z
+
+#
+# Test popup and replacement
+#
+fifth category 'Popup and Replacement:1'
+ Selection Alpha
+# Dictionary - <selection> [^<region>^] - creates a popup region shown when superior category selection choice is chosen
+ Selection Beta popup for sixth and seventh category ^popup:1:sixth category^
+ Selection Beta popup for sixth and seventh category ^popup:2:seventh category^
+# Dictionary - <selection> [~<region>:<category>~] - replaces a category in a region
+# Selection Charlie replaces with seventh category ^seventh category^
+ Selection Charlie replaces with seventh category ~Popup and Replacement:2:seventh category~
+# Selection Delta replaces with eighth category ^eighth category^
+ Selection Delta replaces with eighth category ~Popup and Replacement:2:eighth category~
+sixth category
+ Selection Mike
+ Selection Noble
+ Selection Papa
+seventh category 'Popup and Replacement:2'
+ Selection Tango
+ Selection Victor
+ Selection X-Ray
+eighth category
+ Selection Uncle
+ Selection Whiskey
+ Selection Zulu
+
+#
+# Test uniqueness and Any
+#
+# Dictionary - <category> [!] - allows only one selection from a category
+ninth category !
+ Selection Alpha unique
+ Selection Bravo unique
+ Selection Charlie suggests Any number
+# Dictionary - <Any> - creates a suggestion for the superior category selection choice to suggest a complete category
+  tenth category
+   Any
+ninth category 'Uniqueness and Any:1'
+tenth category 'Uniqueness and Any:2_combo'
+ Selection One
+ Selection Two
+ Selection Three
+
+#
+# Test popback where one selection adds selection to superior category
+#
+twelth category 'Popback'
+ Selection Ecce popup eleventh category ^popup:eleventh category^
+  eleventh category
+   Selection Uno
+# Dictionary - <selection> [<] - revises the superior category by adding as an additional deselection option
+   Selection Duo popback to Ecce <
+   Selection Tre popback to Ecce <
+ Selection Deucas
+ Selection Throy
+thirteenth category 'Long list:1'
+ Selection Alpha
+ Selection Bravo
+ Selection Charlie
+ Selection Delta
+ Selection Echo
+ Selection Foxtrot
+ Selection Golf
+ Selection Hotel
+ Selection India
+ Selection Julliet
+ Selection Kilo
+ Selection Lima
+ Selection Mike
+thirteenth category 'Long list:2'
+
+#
+# Test values
+#
+fourteenth category 'Values:1'
+# Dictionary - selection <quoted phrase> - indicates a value for a selection
+ Selection Apple "Apples"
+ Selection Banana "Bananas"
+ Selection Cherry "Cherries"
+# Dictionary - <selection> [&] - always selected
+ Selection Durian &
+fifteenth category 'Values:2'
+# Dictionary - category <NO SELECTIONS> - editable text box
+# Selection Damson "There are many interesting fruits in the world.  The Damson is not one of them."
+sixteenth category 'Values:3'
+ Selection First
+ Selection Second "25"
+# Dictionary - category selection = <math string> = - value from initial math string
+ Selection Third = 25 =
+seventeenth category 'Values:4'
+# Dictionary - category selection = <destination> = <math string> = - when selected adds math string to destination
+ Selection Set First to 20 = 'sixteenth category'.'Selection First' = 20 =
+# The value for Second has the string "25" replaced with First +-*/ same value
+ Selection Set Second to 20 formula from First = 'sixteenth category'.'Selection Second' = 'sixteenth category'.'Selection First' - 5 + 5 * 5 / 5 =
+# The value for Third is the original 25 - First (5) + 15
+ Selection Set Third to 20 formula with First = 'sixteenth category'.'Selection Third' = - 'sixteenth category'.'Selection First' + 15 =
+
+#
+# Test select and toggle
+#
+eighteenth category 'Toggle:1'
+ Selection Set By Top
+ Selection Set By Bottom
+# Dictionary - <selection> [-] - deselects the category selection (s)
+ Selection Reset Toggle
+  nineteenth category -
+   Selection Toggle Top
+   Selection Toggle Bottom
+nineteenth category 'Toggle:2'
+# Dictionary - <selection> [*] - toggles the selection, only sets/resets select without keeping state
+ Selection Toggle Top *
+# Dictionary - <selection> [+] - selects the category selection (s)
+  eighteenth category +
+   Selection Set By Top
+  eighteenth category -
+   Selection Set By Top
+ Selection Toggle Bottom *
+  eighteenth category +
+   Selection Set By Bottom
+
+#
+# Test graphics and background
+#
+twentieth category 'Graphics'
+# Dictionary - <selection<_graphic>> create a graphic view for the selection using selection name as class for view {up, down, reset}
+ up_graphic
+# down_graphic
+# reset_graphic
+# Test-UpIcon_graphic
+# Dictionary - <selection<_graphic>> create a graphic view for the selection using selection name as resource for loaded icon {up, down, reset}
+ Test-DownIcon_graphic
+ Test-ResetIcon_graphic
+# up '_graphic'
+twenty-first category 'Background:01'
+ Item A "Item A Value"
+ Item B
+ Item C
+# Dictionary - <category> ['<file>_background'] create a graphic background using file as resource for loaded icon {up, down, reset}
+twenty-first category 'Background:02:Test-Background2_background'
+# Position at left top 5% 5%
+ Item A '5,5'
+# Position at middle top 50% 5%
+ Item B '50,5'
+# Position at right bottom 80% 80%
+ Item C '80,80'

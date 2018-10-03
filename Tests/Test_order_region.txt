@@ -1,0 +1,36 @@
+#
+# Test region ordering and region
+#
+
+first category
+ Selection A
+ Selection B
+ Selection C
+
+# Dictionary - <category> ['<region>:<n>'] - each top level region tab pane further regions are enumerated since sorted alphanumerically for addition to the character view
+fourth category 'Order:2'
+ Selection A
+ Selection B
+ Selection C
+third category 'Order:1'
+ Selection M
+ Selection N
+ Selection P
+ Selection Q
+ Selection R
+ Selection S
+ Selection T
+ Selection U
+ Selection V
+ Selection W
+ Selection X
+ Selection Y
+ Selection Z
+fourth category 'Order:2'
+ Selection D
+ Selection E
+
+# Use region axis to layout some panels
+third category 'Region:_panel AXIS H:3_list'
+first category 'Region:_panel AXIS H:_panel AXIS V:1_list'
+fourth category 'Region:_panel AXIS H:_panel AXIS V:2_list'

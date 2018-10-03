@@ -1,0 +1,86 @@
+# Steps that increase / decrease / reset by buttons
+values 'Change:1'
+ First = 'changes'.'Up1' - 'changes'.'Down1' =
+ Second = 'changes'.'Up2' - 'changes'.'Down2' =
+
+changes 'Change:2'
+ Up1 = 0 =
+ Down1 = 0 =
+ Up2 = 0 =
+ Down2 = 0 =
+ 
+step 'Change:3'
+ up_graphic
+ up_graphic *
+ up_graphic = 'changes'.'Up1' = 'changes'.'Up1' + 1 =
+ up_graphic = 'changes'.'Down2' = 'changes'.'Down2' + 1 =
+ down_graphic
+ down_graphic *
+ down_graphic = 'changes'.'Up2' = 'changes'.'Up2' + 1 =
+ down_graphic = 'changes'.'Down1' = 'changes'.'Down1' + 1 =
+ reset_graphic
+ reset_graphic *
+  step -
+   up_graphic
+   down_graphic
+
+# Other designs
+#
+# These do not work because both 'buttons' modify the same element
+# When the button adds the math to the total element then have _both_ attached
+#   
+# Steps that increase / decrease / reset by buttons
+#values 'values'
+# First = 0 =
+# Second = 0 =
+# 
+#changes
+# Up1 = 'values'.'First' = 'values'.'First' + 1 =
+# Down1 = 'values'.'First' = 'values'.'First' - 1 =
+# Reset1 = 'values'.'First' = -'values'.'First' =
+# Up2 = 'values'.'Second' = 'values'.'Second' + 1 =
+# Down2 = 'values'.'Second' = 'values'.'Second' - 1 =
+# Reset2 = 'values'.'Second' = -'values'.'Second' =
+# 
+#step 'change'
+# A 'values-up'
+# A *
+#  changes +
+#   Up1
+#   Down2
+# B 'values-down'
+# B *
+#  changes +
+#   Up2
+#   Down1
+# C 'values-reset'
+# C *
+#  changes +
+#   Reset1
+#   Reset2
+
+# Steps that increase / decrease / reset by buttons
+#values 'values'
+# First = 'step'.'A' =
+# Second = 'step'.'B' =
+# 
+#step 'change'
+# A 'values-up'
+# B 'values-down'
+# C 'values-reset'
+# A *
+# B *
+# C *
+#  step -
+#   A
+#   B
+# A = 0 =
+# B = 0 =
+# A = 'step'.'A' = 'step'.'A' + 1 =
+# A = 'step'.'B' = 'step'.'B' - 1 =
+# B = 'step'.'A' = 'step'.'A' - 1 =
+# B = 'step'.'B' = 'step'.'B' + 1 =
+# C
+#  step -
+#   A
+#   B

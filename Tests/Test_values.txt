@@ -1,0 +1,47 @@
+#
+# Test values
+#
+
+# Show default items
+fourteenth category 'Values:1:1'
+# Dictionary - selection <quoted phrase> - indicates a value for a selection
+ Selection Apple "Apples"
+ Selection Banana "Bananas"
+ Selection Cherry "Cherries"
+# Dictionary - <selection> [&] - always selected
+ Selection Cherry &
+
+fourteenth category 'Values:1:2'
+# Dictionary - selection '_<property>' - indicates the selection should either value or name. Since there is only 1 property it can be shown in a list
+ Selection Apple '_name'
+ Selection Apple '_value'
+ Selection Banana '_name'
+ Selection Banana '_value'
+
+# Dictionary - category '_text' - editable text boxes
+fourteenth category 'Values:1:3_text'
+# Dictionary - all selections shown
+
+fifteenth category 'Values:2_panel'
+ Selection Ichi " : 1"
+# Dictionary - selection '_<property>[_<property>]' - can have multiple properties but then ALL the selections need to have a view and must be shown in a panel
+ Selection Ichi '_name_value'
+ 
+fourteenth category 'Field:1:1_text'
+
+fourteenth category 'Field:2:2_panel'
+# Dictionary - selection '<_area SIZE c,r>' - causes the selection to be shown as an editable text area must be in panel
+ Selection Apple '_area SIZE 4,6'
+ Selection Banana '_area SIZE 6,4'
+
+sixteenth category 'Math:1'
+ Selection First
+ Selection Second "25"
+# Dictionary - category selection = <math string> = - value from initial math string
+ Selection Third = 25 =
+
+seventeenth category 'Math:2'
+# Dictionary - category selection = <destination> = <math string> = - when selected adds math string to destination
+ Selection Set First to 20 = 'sixteenth category'.'Selection First' = 20 =
+ Selection Set Second to 20 = 'sixteenth category'.'Selection Second' = 'sixteenth category'.'Selection First' - 5 + 5 * 5 / 5 =
+ Selection Set Third to 20 = 'sixteenth category'.'Selection Third' = - 'sixteenth category'.'Selection First' + 15 =

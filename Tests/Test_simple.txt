@@ -1,0 +1,16 @@
+#
+# Test SIMPLE
+#
+first category 'Simple:First'
+ Selection A
+ Selection B
+ Selection D
+ Selection E
+ Selection F
+second category 'Simple:Second_combo'
+ Selection G
+ Selection H
+ Selection I
+ Selection J
+ Selection K
+ Selection L

@@ -1,0 +1,12 @@
+#
+# Test popback where one selection adds selection to superior category
+#
+twelth category 'Popback'
+ Selection Ecce popup eleventh category ^popup:eleventh category^
+  eleventh category
+   Selection Uno
+# Dictionary - <selection> [<] - revises the superior category by adding as an additional deselection option
+   Selection Duo popback to Ecce <
+   Selection Tre popback to Ecce <
+ Selection Deucas
+ Selection Throy

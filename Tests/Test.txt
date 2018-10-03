@@ -1,0 +1,25 @@
+#
+# Test including multiple sheets
+#
+
+include category
+# 1 and 2
+ Suggest and Exclude /Test_suggest_exclude.txt/
+# 3 and 4
+ Order and Region /Test_order_region.txt/
+# 5 and 6 and 7 and 8
+ Popup and Replace /Test_popup_replace.txt/
+# 9 and 10
+ Unique and Any /Test_unique_any.txt/
+# 11 and 12
+ Popback /Test_popback.txt/
+# 14 15 16 17
+ Values /Test_values.txt/
+# 18 and 19
+ Toggle /Test_toggle.txt/
+# 20 and 21
+ Graphics /Test_graphics.txt/
+# 22
+ Buttons and Labels /Test_buttons_labels.txt/
+# Attributes /Test_attributes.txt/
+# Change /Test_increment.txt/

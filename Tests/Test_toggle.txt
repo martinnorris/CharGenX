@@ -1,0 +1,23 @@
+#
+# Test select and toggle
+#
+eighteenth category 'Toggle:1'
+ Selection Set By Top
+ Selection Set By Bottom
+# Dictionary - <selection> [-] - deselects the category selection (s)
+ Selection Reset Toggle
+  nineteenth category -
+   Selection Toggle Top
+   Selection Toggle Bottom
+nineteenth category 'Toggle:2'
+# Dictionary - <selection> [*] - toggles the selection, only sets/resets select without keeping state
+ Selection Toggle Top *
+# Dictionary - <selection> [+] - selects the category selection (s)
+  eighteenth category +
+   Selection Set By Top
+  eighteenth category -
+   Selection Set By Top
+ Selection Toggle Bottom *
+  eighteenth category +
+   Selection Set By Bottom
+ 

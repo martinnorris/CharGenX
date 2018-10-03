@@ -1,0 +1,21 @@
+#
+# Test popup and replacement
+#
+fifth category 'Popup and Replacement:1'
+ Selection Alpha
+# Dictionary - <selection> [^<region>^] - creates a popup region shown when superior category selection choice is chosen
+ Selection Beta popup for seventh and eighth category ^popup:1:seventh category^
+ Selection Beta popup for seventh and eighth category ^popup:2:eighth category^
+# Dictionary - <selection> [~<region>:<region>~] - replaces a region with another region
+ Selection Charlie replaces with seventh category ~Popup and Replacement:2:_Replace seventh~
+ Selection Delta replaces with eighth category ~Popup and Replacement:2:_Replace eighth~
+seventh category 'Popup and Replacement:2'
+ Selection Tango
+ Selection Victor
+ Selection X-Ray
+# Dictionary - <category> '_<region>' - prefix by '_' suppresses view of region so it can be hidden when not used to replace something else
+seventh category '_Replace seventh'
+eighth category '_Replace eighth:03_panel AXIS H'
+ Selection Uncle
+ Selection Whiskey
+ Selection Zulu

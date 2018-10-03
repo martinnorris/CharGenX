@@ -1,0 +1,63 @@
+# Points reduced depending on spend
+points 'Attributes'
+ attributes = 3 =
+
+base 'Attributes'
+ BaseStrength = 0 =
+ BaseDexterity = 0 =
+
+bought 'Attributes'
+ BuyStrength = 0 =
+ BuyDexterity = 0 =
+
+attributes 'Attributes'
+ Strength = 'base'.'BaseStrength' + 'bought'.'BuyStrength' =
+ Dexterity = 'base'.'BaseDexterity' + 'bought'.'BuyDexterity' =
+
+select !
+ LARGE
+ fast
+
+select
+ LARGE = 'base'.'BaseStrength' = 2 =
+ fast = 'base'.'BaseDexterity' = 2 =
+
+select 'Attributes'
+
+workout !
+ Stronger
+ Strongest
+
+workout
+ Stronger = 'bought'.'BuyStrength' = 1 =
+ Stronger = 'points'.'attributes' = -1 =
+ Strongest = 'bought'.'BuyStrength' = 2 =
+ Strongest = 'points'.'attributes' = -2 =
+
+workout 'Attributes'
+
+stretch !
+ Faster
+ Fastest
+
+stretch
+ Faster = 'bought'.'BuyDexterity' = 1 =
+ Faster = 'points'.'attributes' = -1 =
+ Fastest = 'bought'.'BuyDexterity' = 2 =
+ Fastest = 'points'.'attributes' = -2 =
+
+stretch 'Attributes'
+
+#up down
+# Strength = 0 =
+# Dexterity = 0 =
+
+#up down
+# Strength = 'bought'.'Strength' = 'up down'.'Strength' =
+# Strength = 'points'.'attributes' = - 'up down'.'Strength' =
+# Dexterity = 'bought'.'Dexterity' = 'up down'.'Dexterity' =
+# Dexterity = 'points'.'attributes' = - 'up down'.'Dexterity' =
+
+#up down 'Attributes:_panel RIGHT'
+# Strength '_button = ++ 'up down'.'Strength' = _label = attributes.Strength = _button = -- 'up down'.'Strength' ='
+# Dexterity '_button = + 1= _label = attributes.Dexterity = _button = -1 ='

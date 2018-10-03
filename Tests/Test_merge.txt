@@ -1,0 +1,18 @@
+#
+# Test merge
+#
+
+# merge add new category
+third category 'Simple:Third'
+ Selection M
+ Selection N
+ Selection O
+
+first category
+# merge add new selection to existing category
+ Selection C
+# merge add new math to existing selection - note need to have references in merge document as well {because merge builds a document standalone to start}
+ Selection B
+ Selection A = 'first category'.'Selection B' = +1 =
+
+#first category 'Merge:Again'

@@ -1,0 +1,25 @@
+#
+# Test suggestion and exclusion
+#
+# Dictionary - <category> ['<region>'] - for a category creates a region with full path separated by ':' to display the category
+first category 'Suggestion and Exclusion'
+ Selection A
+ Selection B
+ Selection C
+ Selection D
+ Selection E
+ Selection F
+second category 'Suggestion and Exclusion'
+ Selection G suggests A and B and C
+# Dictionary - <category> [.] - creates a suggestion for the superior category selection choice to suggest a particular suggestion
+  first category .
+   Selection A
+   Selection B
+   Selection C
+ Selection H excludes all except A and C and E and F
+# Dictionary - <category> [>] - creates an exclusion for the superior category selection choice to exclude another suggestion
+  first category >
+   Selection A
+   Selection C
+   Selection E
+   Selection F

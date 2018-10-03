@@ -1,0 +1,18 @@
+#
+# Test uniqueness and Any
+#
+# Dictionary - <category> [!] - allows only one selection from a category
+ninth category !
+ Selection Alpha unique
+ Selection Bravo unique
+ Selection Charlie suggests Any number
+# Dictionary - <Any> - creates a suggestion for the superior category selection choice to suggest a complete category
+  tenth category
+   Any
+ninth category 'Uniqueness and Any:1'
+tenth category 'Uniqueness and Any:2_combo'
+ Selection One
+ Selection Two
+ Selection Three
+tenth category 'Uniqueness and Any:3'
+ 

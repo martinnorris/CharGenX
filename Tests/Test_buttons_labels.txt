@@ -1,0 +1,53 @@
+#
+# Test building buttons and labels
+#
+
+twenty second
+ Selection Primus "ONE"
+ Selection Secundus "TWO"
+ 
+twenty second 'Buttons and Labels:01'
+ Selection Primus
+ Selection Secundus
+ 
+# Dictionary - <category> '_panel' the category is shown as a panel - needed for using buttons and labels
+twenty second 'Buttons and Labels:02_panel'
+# Dictionary - selection '_button [parameters]' - creates a button
+ Selection Primus '_button P'
+# Dictionary - selection '_label' - creates a label
+ Selection Secundus '_label S'
+ 
+twenty second 'Buttons and Labels:03_panel'
+# Dictionary - selection '_<property>[_<property>]' - can have multiple buttons and labels
+ Selection Primus '_button LEFT_button MIDDLE_button RIGHT'
+ Selection Secundus '_label_label "" OPAQUE'
+ Selection Tertius '_button LEFT_label RIGHT'
+
+ABC
+ Value = 0 =
+ 
+DEF
+ Value = 0 =
+
+GHI
+ Value = 0 =
+
+ABC 'Panel:01_panel AXIS H:03_panel AXIS V'
+ Up '_button UP ALIGN C = DEF.Value = DEF.Value + 1 ='
+ Value '_value OPAQUE ALIGN C FONT 16'
+ Down '_button DOWN ALIGN C = DEF.Value = DEF.Value - 1 ='
+
+DEF 'Panel:01_panel AXIS H:02_panel AXIS V'
+ Up '_button UP ALIGN L'
+ Value '_value ALIGN L FONT 20'
+ Down '_button DOWN ALIGN L'
+
+GHI 'Panel:01_panel AXIS H:01_panel AXIS V'
+ Up '_button UP ALIGN R = GHI.Value + 1 ='
+ Value '_value OPAQUE ALIGN R FONT 24'
+ Down '_button DOWN ALIGN R = GHI.Value - 1 ='
+ 
+Value 'Panel:02'
+ ABC = ABC.Value =
+ DEF = DEF.Value =
+ GHI = GHI.Value =

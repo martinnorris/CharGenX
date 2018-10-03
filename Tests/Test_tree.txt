@@ -1,0 +1,12 @@
+#
+# Test tree
+#
+category no view
+ Selection A
+ Selection B
+category no view 'view:limited'
+ Selection A
+category no view 'view:full'
+category no view 'view:extra'
+ Selection B 'alternate'
+ Selection C

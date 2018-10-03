@@ -1,0 +1,36 @@
+#
+# Test graphics and background
+#
+twentieth category 'Graphics'
+# Dictionary - <selection<_graphic>> create a graphic view for the selection using selection name as class for view {up, down, reset}
+ up_graphic
+# down_graphic
+# reset_graphic
+# Test-UpIcon_graphic
+# Dictionary - <selection<_graphic>> create a graphic view for the selection using selection name as resource for loaded icon {up, down, reset}
+ Test-DownIcon_graphic
+ Test-ResetIcon_graphic
+# up '_graphic'
+twenty-first category 'Background:01'
+ Item A "Item A Value"
+ Item B
+ Item C
+# Dictionary - <category> ['<file>_background'] create a graphic background using file as resource for loaded icon {up, down, reset}
+twenty-first category 'Background:02:Test-Background2_background'
+# Position at left top 5% 5%
+ Item A '_label "" OPAQUE_5,5'
+# Position at middle top 50% 5%
+ Item B '50,5'
+ Test-UpIcon_graphic '30,30'
+# Position at right bottom 80% 80%
+ Item C '80,80'
+ 
+twenty-first category 'Large:01:Test-Background3_background'
+ Item A '_value OPAQUE _0,0'
+ Item B '_value OPAQUE _40,40'
+ Test-UpIcon_graphic '60,60'
+ Item C '_value OPAQUE _95,98'
+# Item D '_value OPAQUE _5,5'
+# Item E '_value OPAQUE _5,95'
+# Item F '_value OPAQUE _95,5'
+# Item G '_value OPAQUE _95,95'
